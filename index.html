@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title> JJ Site </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+		<link rel="stylesheet" href="_css/jquery.mobile.css">
+		<link rel="stylesheet" href="_css/mystyles.css">
+		<link rel="stylesheet" href="_css/leehyeo.css" />
+
+		<script src="_js/jquery.js"></script>
+		<script src="_js/jquery.mobile.js"></script>
+		<script src="_js/Chart.js"></script>
+		<script src="_js/myscript.js"></script>
+
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false&language=en"></script>
+	</head>
+	<body>
+		<div id="homeP" data-role="page" data-theme="a">
+			<header data-role="header">
+				<h1></h1>
+			</header>
+			<section class="ui-content" role="main">
+				<p class="title">Station Lists</p>
+				<div id="overview" data-role="collapsible-set"></div>
+				<ul id="stationList" data-role="listview" data-inset="true" data-filter="true">
+				</ul>
+			</section>
+			<footer data-role="footer" role="contentinfo" class="ui-footer ui-bar-inherit">
+			</footer>
+		</div>
+		<!-- members popup page : #jinInfo -->
+		<div data-role="page" id="jinInfo">
+			<header data-role="header" data-theme="b">
+				<h2>Member Info</h2>
+			</header>
+			<!-- /header -->
+			<div class="ui-content" role="main" data-theme="b">
+				<h3>Hyeonjin</h3>
+				<div id="jinDetail"></div>
+				<p><a href="#homeP" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-top"> Go Back </a></p>
+			</div>
+			<!-- /content -->
+		</div>
+		<!-- members popup page : #yoojuInfo -->
+		<div data-role="page" id="yoojuInfo">
+			<header data-role="header" data-theme="b">
+				<h2>Member Info</h2>
+			</header>
+			<!-- /header -->
+			<div class="ui-content" role="main" data-theme="b">
+				<h3>Yooju</h3>
+				<div id="jooDetail"></div>
+				<p><a href="#homeP" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-top"> Go Back </a></p>
+			</div>
+			<!-- /content -->
+		</div>
+		<!-- Station popup : #popupStation -->
+		<div data-role='popup' id='popupStation' data-overlay-theme='a' data-theme='d' data-corners='false'>
+			<a href='#' data-rel='back' data-role='button' data-theme='a' data-icon='delete' data-iconpos='notext' class='ui-btn-right'>Close</a>
+			<img class='popphoto' src='' style='max-height:85%;' alt=''>
+		</div>
+		<!-- detail page for station info -->
+		<div data-role="page" id="stationDetail">
+			<header data-role="header">
+				<h1></h1>
+				<a href="#homeP" class="ui-btn ui-icon-arrow-l
+				ui-btn-icon-left ui-shadow ui-btn-corner-all">Main Page</a>
+			</header>
+			<section class="ui-content" role="main">
+				<div id="stationdh"></div>
+				<div id="stationdc" data-role="collapsible-set"></div>
+			</section>
+			<footer data-role="footer">
+			</footer>
+		</div>
+		
+		<!-- Map page for location info -->
+		<div data-role="page" id="mapinfo">
+			<header data-role="header">
+				<h1></h1>
+				<a href="#homeP" class="ui-btn ui-icon-arrow-l
+				ui-btn-icon-left ui-shadow ui-btn-corner-all">Main Page</a>
+			</header>
+			<section class="ui-content" role="main">
+				<div id="map_canvas"></div>
+			</section>
+			<footer data-role="footer">
+			</footer>
+		</div>
+		<!-- chart page for Docks info -->
+		<div data-role="page" id="chartinfo" data-theme="a">
+			<header data-role="header">
+				<h1></h1>
+				<a href="#homeP" class="ui-btn ui-icon-arrow-l
+				ui-btn-icon-left ui-shadow ui-btn-corner-all">Main Page</a>
+			</header>
+			<section class="ui-content" role="main">
+				<div style="width: 100%; height: 100%;">
+	   				<canvas id="barCanvas" style="width: 100%; height: auto;" auto-legend></canvas>
+				</div>
+				<div id="barlegend"></div>
+			</section>
+			<footer data-role="footer">
+			</footer>
+		</div>
+	</body>
+</html>
