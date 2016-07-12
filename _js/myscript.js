@@ -52,7 +52,7 @@ function listStation (xml) {
 		$("footer").append("<nav data-role='navbar' class='ui-navbar' role='navigation' ><ul class='ui-grid-a'>" +
 					"<li class='ui-block-a'><a href='#jinInfo' class='ui-btn ui-icon-"+ data.members.member[0].stupic +" ui-btn-icon-bottom' " +
 					"data-rel='dialog' data-transition='pop'></a></li>" +
-					"<li class='ui-block-b'><a href='#yoojuInfo' class='ui-btn ui-icon-"+data.members.member[1].stupic+" ui-btn-icon-bottom' " + 
+					"<li class='ui-block-b'><a href='#jinInfo2' class='ui-btn ui-icon-"+data.members.member[1].stupic+" ui-btn-icon-bottom' " +
 					"data-rel='dialog' data-transition='pop'></a></li></ul></nav>");
 
 	    var n = 0;
@@ -114,18 +114,18 @@ $(document).on("pagebeforeshow", "#jinInfo", function() {
 	});
 });
 
-$(document).on("pagebeforeshow", "#yoojuInfo", function() {
-	console.log("in yooju Detail");
+$(document).on("pagebeforeshow", "#jinInfo2", function() {
+	console.log("in jin2 Detail");
 	$.getJSON("groupMembers.json", function(data) {
-		$("#jooDetail").html("");
+		$("#jinDetail2").html("");
 		for (var i = 0; i < data.members.member.length; i++) {
-			if (data.members.member[i].login == "choiyooj") {
-				$("#jooDetail").append("<ul><li>" +
+			if (data.members.member[i].login == "leehyeo2") {
+				$("#jinDetail2").append("<ul><li>" +
 	            "<b>Member Name : </b>" + data.members.member[i].name +
 	            "</li><li><b>Student Number : </b>" + data.members.member[i].stunumber +
 	            "</li><li><b>Login ID : </b>" + data.members.member[i].login +
 	            "</li></ul>"
-	      		 );		
+	      		 );
 			}
 		}
 	});
